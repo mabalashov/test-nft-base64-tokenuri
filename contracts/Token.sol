@@ -38,7 +38,13 @@ contract Token is ERC721, Ownable{
                 Base64.encode(
                     bytes(
                         abi.encodePacked(
-                            '{ "token": "', Strings.toString(tokenId) , '", "typeSubscription": "', typeSubscription(tokenId), '" }'
+                            '{',
+                                '"name": "test token ', Strings.toString(tokenId), '",',
+                                '"description": "test token description",',
+                                '"attributes": [',
+                                    '{"typeSubscription": "', typeSubscription(tokenId), '"}',
+                                ']'
+                            '}'
                         )
                     )
                 )
